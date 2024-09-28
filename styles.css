@@ -1,0 +1,19 @@
+.stats {
+    background-color: #e3f2fd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.stats p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+#temperature, #humidity {
+    font-weight: bold;
+    color: #007bff;
+}

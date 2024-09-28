@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Terrario</title>
+    <link rel="stylesheet" href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet">
+    <script defer src="https:vjs.zencdn.net/7.20.3/video.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+        button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            display: block;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <button id="activateSprinklers">Activar Rociadores</button>
+        <button id="turnOnPlate">Placa ON</button>
+        <button id="turnOffPlate">Placa OFF</button>
+        <p>LIVE STREAM</p>
+        <br>
+        <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="264"
+  data-setup='{}'>
+  <source src="http://194.195.92.106:8081/hls/pythor1234.m3u8" type="application/x-mpegURL">
+</video>
+<script src="https://cdn.jsdelivr.net/npm/video.js@7.8.0/dist/video.js"></script>
+
+        <br>
+        <button id="turnOnLED">LED ON</button>
+        <button id="turnOffLED">LED OFF</button>
+        <input type="color" id="ledColor" value="#ff0000"> <!-- Valor predeterminado rojo -->
+        <button id="setLedColor">Enviar Color LED</button>
+        <br>
+        <div class="stats">
+            <p>ESTADÍSTICAS</p>
+            <p>Temperatura: <span id="tempValue">0</span>°C</p>
+            <p>Humedad: <span id="humidityValue">0</span>%</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
